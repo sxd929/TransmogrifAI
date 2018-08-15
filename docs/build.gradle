@@ -32,7 +32,7 @@ task allScaladoc(type: ScalaDoc) {
     destinationDir = file("build/site/scaladoc")
 }
 
-task buildDocs(dependsOn: [bake, allScaladoc]) {
+task buildDocs(dependsOn: [bake]) {
     group 'Documentation'
     description = "Build TransmogrifAI documentation"
 }

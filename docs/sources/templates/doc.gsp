@@ -1,15 +1,17 @@
 <%include "header.gsp"%>
 
-    <%include "menu.gsp"%>
+    <%include "docsidebar.gsp"%>
 
-    <div class="page-header">
+	<div style="margin-left:22%">
+
+	<div class="page-header">
         <h1>${content.title}</h1>
     </div>
 
-    <!--<p><em>${new java.text.SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH).format(content.date)}</em></p>-->
-
+	<div class="w3-container">
     <p>${content.body}</p>
+    </div>
+    
+    </div>
 
-    <hr />
-
-<%include "footer.gsp"%>
+<%include "docfooter.gsp"%>

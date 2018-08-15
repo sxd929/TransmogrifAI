@@ -2,7 +2,7 @@
 		<div id="push"></div>
     </div>
     
-    <div id="footer">
+    <div id="docfooter" style="margin-left:20%">
       <div class="container">
         <p class="muted credit">&copy; 2017 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> <a href="https://www.w3schools.com/w3css/">W3 css v4.10</a>  | Baked with <a href="http://jbake.org">JBake ${version}</a></p>
       </div>
