@@ -31,10 +31,12 @@
 package com.salesforce.op.filters
 
 import com.salesforce.op.OpParams
+import com.salesforce.op.features.types.Text
 import com.salesforce.op.features.{OPFeature, TransientFeature}
 import com.salesforce.op.readers.DataFrameFieldNames
-import com.salesforce.op.stages.impl.feature.HashAlgorithm
+import com.salesforce.op.stages.impl.feature.{HashAlgorithm, TextTokenizer}
 import com.salesforce.op.test.{Passenger, PassengerSparkFixtureTest}
+import com.salesforce.op.testkit.RandomText
 import com.salesforce.op.utils.spark.RichDataset._
 import com.twitter.algebird.Operators._
 import org.apache.spark.mllib.feature.HashingTF
@@ -43,8 +45,72 @@ import org.junit.runner.RunWith
 import org.scalatest.FlatSpec
 import org.scalatest.junit.JUnitRunner
 
+import scala.io.Source
+
 @RunWith(classOf[JUnitRunner])
 class RawFeatureFilterTest extends FlatSpec with PassengerSparkFixtureTest with FiltersTestData {
+  val txt1 = Seq("a", "b", "c", "c", "c")
+  val txt2 = Seq("a", "d", "b", "a", "b")
+  def calculateJaccard(seq1: Seq[String], seq2: Seq[String]): Double = {
+    val bagOfWords1 = seq1.groupBy(identity).mapValues(_.size)
+    val bagOfWords2 = seq2.groupBy(identity).mapValues(_.size)
+    val intersection = bagOfWords1.map { case (str, ct) =>
+      if (bagOfWords2.get(str).isEmpty) 0 else Math.min(bagOfWords2(str), ct)
+    }.sum * 2
+    val union = bagOfWords1.values.sum + bagOfWords2.values.sum
+    1 - intersection.toDouble / union
+  }
+  it should "not be very small for random text" in {
+    val text1 = RandomText.strings(1,10).take(100000).map(_.value.get).toSeq
+    val text2 = RandomText.strings(1,10).take(100000).map(_.value.get).toSeq
+    val hasher: HashingTF = new HashingTF(numFeatures = 10000)
+      .setBinary(false)
+      .setHashAlgorithm(HashAlgorithm.MurMur3.toString.toLowerCase)
+    val hash1 = hasher.transform(text1).toArray
+    val hash2 = hasher.transform(text2).toArray
+    val dist1 = FeatureDistribution("text", None, 100000L, 0, hash1, Array())
+    val dist2 = FeatureDistribution("text", None, 100000L, 0, hash2, Array())
+    val js = dist1.jsDivergence(dist2)
+    println(js)
+    println(calculateJaccard(text1, text2))
+  }
+
+  it should "not be very large for selected text" in {
+    val text1 = RandomText.pickLists(domain = List("alpha", "beta", "gamma", "delta"), List(0.05, 0.1, 0.15, 1.0))
+      .take(100000).map(_.value.get).toSeq
+    val text2 = RandomText.pickLists(domain = List("alpha", "beta", "gamma", "delta"), List(0.1, 0.3, 0.7, 1.0))
+      .take(100000).map(_.value.get).toSeq
+    val hasher: HashingTF = new HashingTF(numFeatures = 100)
+      .setBinary(false)
+      .setHashAlgorithm(HashAlgorithm.MurMur3.toString.toLowerCase)
+    val hash1 = hasher.transform(text1).toArray
+    val hash2 = hasher.transform(text2).toArray
+    val dist1 = FeatureDistribution("text", None, 1000L, 0, hash1, Array())
+    val dist2 = FeatureDistribution("text", None, 1000L, 0, hash2, Array())
+    val js = dist1.jsDivergence(dist2)
+    println(js)
+    println(calculateJaccard(text1, text2))
+  }
+
+  it should "be large for different text" in {
+    val text1 = Source.fromFile("src/test/resources/text1.txt").getLines.toList.map(Text(_))
+      .flatMap(TextTokenizer.tokenize(_).tokens.value)
+    println(text1.size)
+    val text2 = Source.fromFile("src/test/resources/text2.txt").getLines.toList.map(Text(_))
+      .flatMap(TextTokenizer.tokenize(_).tokens.value)
+    println(text2.size)
+    val hasher: HashingTF = new HashingTF(numFeatures = 100)
+      .setBinary(false)
+      .setHashAlgorithm(HashAlgorithm.MurMur3.toString.toLowerCase)
+    val hash1 = hasher.transform(text1).toArray
+    val hash2 = hasher.transform(text2).toArray
+    val dist1 = FeatureDistribution("text", None, 1000L, 0, hash1, Array())
+    val dist2 = FeatureDistribution("text", None, 1000L, 0, hash2, Array())
+    val js = dist1.jsDivergence(dist2)
+    println(js)
+    println(calculateJaccard(text1, text2))
+  }
+
   Spec[RawFeatureFilter[_]] should "compute feature stats correctly" in {
     val features: Array[OPFeature] =
       Array(survived, age, gender, height, weight, description, boarded, stringMap, numericMap, booleanMap)

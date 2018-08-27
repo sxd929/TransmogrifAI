@@ -1,0 +1,111 @@
+Salesforce.com, Inc. (styled in its logo as salesƒorce; abbreviated usually as SF or SFDC) is an American cloud computing company headquartered in San Francisco, California. Though its revenue comes from a customer relationship management (CRM) product, Salesforce also sells commercial applications of social networking through acquisition and internal development.
+
+Salesforce was ranked first in Fortune's 100 Best Companies to Work For in 2018.
+
+History
+The company was founded in 1999 by former Oracle executive Marc Benioff, Parker Harris, Dave Moellenhoff, and Frank Dominguez as a company specializing in software as a service (SaaS).[4] Harris, Moellenhoff and Dominguez, three software developers previously at consulting firm Left Coast Software, were introduced to Benioff through a friend and former Oracle colleague Bobby Yazdani.[5] Harris and team wrote the initial sales automation software, which launched to its first customers during Sept-Nov 1999.[6]
+
+In June 2004, the company's initial public offering was listed on the New York Stock Exchange under the stock symbol CRM and raised US$110 million.[7] Early investors include Larry Ellison, Magdalena Yesil, Halsey Minor, Stewart Henderson, Mark Iscaro, and Igor Sill of Geneva Venture Partners, as well as Nancy Pelosi.
+
+In October 2014, Salesforce announced the development of its Customer Success Platform to tie together Salesforce's services, including sales, service, marketing, analytics, community, and mobile apps.[8]In October 2017, Salesforce launched a Facebook Analytics tool for B2B marketers.
+
+Services
+Salesforce.com's customer relationship management (CRM) service is broken down into several broad categories: Commerce Cloud, Sales Cloud,[11] Service Cloud,[12] Data Cloud[13] (including Jigsaw), Marketing Cloud, Community Cloud[14] (including Chatter), Analytics Cloud,[15] App Cloud, and IoT with over 100,000 customers.[16]
+
+Salesforce
+Salesforce is the primary enterprise offering within the Salesforce platform. It provides companies with an interface for case management and task management, and a system for automatically routing and escalating important events. The Salesforce customer portal provides customers the ability to track their own cases, includes a social networking plug-in that enables the user to join the conversation about their company on social networking websites, provides analytical tools and other services including email alert, Google search, and access to customers' entitlement and contracts.[17]
+
+Lightning Platform
+Formerly Known as Force.com[18] is a platform as a service (PaaS) that allows developers to create multitenant (software running on a server as a single instance, serving multiple tenants) add-on applications that integrate into the main Salesforce.com application.[19][not in citation given] Force.com[further explanation needed] applications are hosted on Salesforce.com's infrastructure.[20]
+
+Force.com applications are built using declarative tools, backed by Lightning[further explanation needed] and Apex (a proprietary Java-like programming language for Force.com)[21] and Lightning and Visualforce (a framework[22] that includes an XML[23] syntax typically used to generate HTML). The Force.com platform typically receives three complete releases a year.[24] As the platform is provided as a service to its developers, every single development instance also receives all these updates.
+
+In the Spring 2015 release a new framework for building user interfaces – Lightning Components – was introduced in beta.[25] Lightning components are built using the open-source Aura Framework[26] but with support for Apex as the server-side language instead of Aura's Javascript dependency. This has been described as an alternative to, not necessarily a replacement for, Visualforce pages.[27]
+
+According to a September 2009 Gartner Group report,[28] Force.com had over 1,000 customer accounts. As of 2013, the Force.com platform has 1.4 million registered developers.[29]
+
+Community Cloud
+Community Cloud provides Salesforce customers the ability to create online web properties for external collaboration, customer service, channel sales, and other custom portals in their instance of Salesforce. Tightly integrated to Sales Cloud, Service Cloud, and App Cloud, Community Cloud can be quickly customized to provide a wide variety of web properties.
+
+Work.com
+Work.com, previously Rypple, is a social performance management platform that helps managers and employees improve work performance through continuous coaching, real-time feedback, and recognition.[30] It is marketed as a solution for sales performance, customer service, marketing, and as a service that can be employed by human resource departments.
+
+Work.com, then known as "Rypple", was founded by Daniel Debow and David Stein, who wanted to create a simple way of asking for feedback anonymously at work.[31] The company was formed in May 2008 and their client list included Mozilla, Facebook, LinkedIn and the Gilt Groupe. Rypple "'reverses the onus on the demand for more feedback' by getting employees to build and manage their own coaching networks".[32]
+
+In September 2011, Rypple announced that they had hired Bohdan Zabawskyj as its Chief Technology Officer.[33]
+
+In 2011, Rypple developed a more formalized management methodology called OKR ("Objectives and Key Results") for Spotify.[34] Rypple also partnered with Facebook to create "Loops", short for "feedback loops", which gathers feedback from co-workers, "thank you's", progress against goals, and coaching from supervisors into one channel for a "rich, robust, continuous performance review".[35]
+
+In December 2011, Salesforce.com announced that they would acquire Rypple. The transaction was completed in 2012 and Rypple was rebranded as Work.com in September 2012.[36]
+
+Data.com
+Data.com, previously known as Jigsaw, is a cloud-based automated system for acquiring and managing CRM records within a user's Salesforce.com account.[37]
+
+Data.com is also an online business directory of companies and business professionals that is built, maintained and accessed by a worldwide community of over a million subscribers.[38] A large database allows members to exchange and share the business information of more than 29 million contacts from over 4 million companies. This information consists of what is commonly found on a business card.
+
+Data.com utilizes a user-generated database that's continually updated by its members. Data.com's contacts act as a virtual business card, offering name, title, postal and email addresses and direct-dial phone numbers for individual contacts.
+
+Data.com competitors include services such as Dun & Bradstreet/Avention and ZoomInfo.
+
+In April 2018, Salesforce announced it is going to retire Data.com Connect on May 4th, 2019 retirement.[39]
+
+Desk.com
+Desk.com is a saas help desk and customer support product accessible through the cloud. Desk.com is owned by Salesforce.com and was previously known as Assistly. Desk.com is headquartered in San Francisco, California.
+
+After being acquired by Salesforce.com for $50 million in 2011[40] Assistly was re-branded as Desk.com in 2012[41] as a "slick social customer support software".[42]
+
+Desk.com is a Saas customer service application. The product differentiates itself from Salesforce's other service platform in that Desk.com specifically targets small businesses with its features and functions.[43] Desk.com integrates with a variety of products and third-party applications including Salesforce CRM, Salesforce IQ,[44] Atlassian JIRA, Mailchimp[45] and other apps. Desk.com also supports up to 50 languages.[46]
+
+Do.com
+Do.com was a cloud-based task management system for small groups and businesses, introduced in 2011 and discontinued in 2014.[47][48][49] Salesforce did not offer any reason for shutting down the service, however, it provided an Export tool to save data entered within the Do.com interface. The Do.com domain was sold to a startup in 2014.[50]
+
+AppExchange
+Launched in 2005, the Salesforce AppExchange is an online application marketplace for third-party applications that run on the Force.com platform. Applications are available for free, as well as via yearly or monthly subscription models. Applications available range from integrations with SharePoint to mobile approval management.[51] As of June 2016, it features 2,948 applications which have driven 3+ million installs.[52] The "AppExchange" is also a place customers can search for cloud consulting partners to help them implement the technology in their own organisation. Cloud consulting partners for Salesforce include large companies like IBM's "Bluewolf" and Accenture as well as smaller ones like Cloudreach.[53]
+
+Configuration
+Salesforce users can configure their CRM application. In the system, there are tabs such as "Contacts," "Reports," and "Accounts." Each tab contains associated information. Configuration can be done on each tab by adding user-defined custom fields.[54]
+
+Configuration can also be done at the "platform" level by adding configured applications to a Salesforce instance, that is adding sets of customized / novel tabs for specific vertical- or function-level (Finance, Human Resources, etc.) features.
+
+Web services
+In addition to the web interface, Salesforce offers a SOAP/REST Web service API that enables integration with other systems.
+
+Technologies
+
+This section needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. (May 2015) (Learn how and when to remove this template message)
+Salesforce works on Model–view–controller architecture.
+
+Apex
+Apex is a proprietary programming language provided by the Force.com platform to developers similar to Java and C#. It is a strongly typed, object-oriented, case-insensitive programming language, following a dot-notation and curly-brackets syntax. Apex can be used to execute programmed functions during most processes on the Force.com platform including custom buttons and links, event handlers on record insertion, update, or deletion, via scheduling, or via the custom controllers of Visualforce pages.
+
+Due to the multitenant nature of the platform, the language has strictly imposed governor limitations[55] to guard against any code monopolizing shared resources. Salesforce provides a series of asynchronous processing methods for Apex to allow developers to produce longer running and more complex Apex code.[56]
+
+Lightning
+In 2014, Salesforce made public the frontend of its platform, called Lightning.[57] This component-based framework is what the Salesforce mobile app is built on and customers are now able to build on it as well. Salesforce built on this framework in 2015 by releasing the Lightning Design System,[58] an HTML style framework with default CSS styling built in. This framework allows customers to build their own components to either use in their internal instances or sell on the AppExchange.
+
+One of the new tools released is known as the Salesforce Lightning App Builder for rapid application development of responsive web interfaces. This interface allows for different screens to be put together based on Lightning components. This can be used as layouts for records or specific applications.
+
+Operations
+Salesforce is headquartered in San Francisco, with regional headquarters in Morges, Switzerland (covering Europe, Middle East, and Africa, Singapore), India (covering Asia Pacific minus Japan), and Tokyo (covering Japan). Other major offices are in Toronto, Chicago, New York City, London, Sydney, Dublin, Hyderabad, San Mateo, California, Indianapolis,[59] and Hillsboro, Oregon.[60] Salesforce.com has its services translated into 16[61] different languages and as of July 31, 2011, had 104,000[62] customers and over 2.1 million subscribers.[63] Salesforce will be moving its Midwest Regional headquarters to Indianapolis in 2017.
+
+Standard & Poor's included Salesforce, at the same time as Fastenal, into the S&P 500 index in September 2008, following the federal takeover of Fannie Mae and Freddie Mac and their removal from the index.
+
+Venture capital fund
+The company announced in September 2014 that it had set up a venture capital arm to fund start-ups creating apps primarily for mobile phones.[65]
+
+IT infrastructure
+Salesforce migrated to Dell servers with AMD processors running Linux from Sun Fire E25K servers with SPARC processors running Solaris in 2008.[66] The company uses the Momentum platform from Message Systems to allow its customers to send large amounts of email.[67]
+
+In 2012, Salesforce announced plans to build a data center in the UK to handle European citizens' personal data.[68]
+
+In 2013, Salesforce and Oracle announced a nine-year partnership in which Salesforce will use Oracle Linux, Oracle Exadata, Oracle Database, and the Java platform to power Salesforce's applications and SaaS platform.[69]
+
+In 2016, Salesforce announced that it will use Amazon Web Services hosting for countries with restrictive data residency requirements and where no Salesforce data centers are operating. In July 2017, the first such Salesforce instance went live in Canada, with Salesforce announcing that this enabled signing a number of Canadian customers.[70]
+
+In November 2007, a successful phishing attack on a Salesforce employee compromised contact information on a number of Salesforce customers, which was then used to send highly targeted phishing emails.[83][84][85] Salesforce has stated that "a phisher tricked someone into disclosing a password, but this intrusion did not stem from a security flaw in [the salesforce.com] application or database."[86] The phishing breach was cited as an example of why the CRM industry needs greater security for users against such threats as spam.[87]
+
+While the crowd-sourced method of building business contacts[88] has proven popular with recruiters, marketers and sales professionals, it has also raised questions of privacy as most of the site's database is entered without permission from the person being listed. Data.com does, however, make it easy to remove business information on request as noted in December 2009 by TechCrunch.[89] However, recipients of these messages regard it as spam and at least one complaint about receiving more spam after attempting to remove one's address has been noted.[90]
+
+In 2017 at Def Con, Salesforce's Director of Offensive Security and a security engineer were fired on the conference room floor in front of several other attendees by an executive at the company after giving a talk. Word rapidly spread that two speakers had been released at the event.[91] The presentation was initially signed off on by the company; however, Salesforce's management team had an unexplained and sudden change of heart an hour before the event.[92] Salesforce's Director of Offensive Security had turned off his phone prior to the presentation due to security concerns and was unable to receive any communication from Salesforce prior to the presentation.[91] Reaction after the firings was swift, with the Electronic Frontier Foundation providing representation to the fired employees[91] and members of the security community opining "Salesforce undermined their credibility in the security community to a significant degree" and that "how they are perceived by the security community isn’t top of their list of things they care about."[93] The presented MEATPISTOL tool was anticipated to be released as open source at the time of the presentation, but Salesforce continues to hold back on releasing any of the code to developers or the public.[94] The terminated employees have continued to call on the company to open-source the software.[95]
+
+The not-for-profit organization RAICES rejected a $250,000 USD philanthropic donation from Salesforce because the company has contracts with Customs and Border Patrol. The executive director of Raices, Jonathan Ryan, tweeted that “When it comes to supporting oppressive, inhumane, and illegal policies, we want to be clear: the only right action is to stop” in reference to the rejected donation.[96] Salesforce CEO Marc Benioff responded in an official statement that the company's employees "dont work with CBP regarding separation of families. CBP is a customer & follows our TOS. We dont have an agreement with ICE. I’m Proud of the Men & Women who protect & serve our country every day & I’m Proud of our Ohana."[97]
