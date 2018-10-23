@@ -30,7 +30,7 @@
 
 package com.salesforce.op.stages.impl.tuning
 
-import com.salesforce.op.evaluators.{OpBinaryClassificationEvaluatorBase, OpEvaluatorBase, OpMultiClassificationEvaluatorBase, SingleMetric}
+import com.salesforce.op.evaluators._
 import com.salesforce.op.features.types.{OPVector, Prediction, RealNN}
 import com.salesforce.op.features.{Feature, FeatureBuilder}
 import com.salesforce.op.stages.OpPipelineStage2
@@ -49,6 +49,7 @@ import org.slf4j.{Logger, LoggerFactory}
 
 import scala.concurrent.duration.Duration
 import scala.concurrent.{ExecutionContext, Future}
+import scala.util.{Success, Try}
 
 
 /**
@@ -293,6 +294,7 @@ private[op] trait OpValidator[M <: Model[_], E <: Estimator[_]] extends Serializ
           estimator.set(pi1, label).set(pi2, features)
       }
       Future {
+        val evaluator2 = Evaluators.BinaryClassification.auROC()
         val numModels = params.length
         val metrics = new Array[Double](params.length)
         log.info(s"Train split with multiple sets of parameters.")
@@ -300,6 +302,10 @@ private[op] trait OpValidator[M <: Model[_], E <: Estimator[_]] extends Serializ
         for {i <- 0 until numModels} {
           val metric = evaluator.evaluate(models(i).transform(test, params(i)))
           log.info(s"Got metric $metric for model $name trained with ${params(i)}.")
+          val metric2 = Try(evaluator2.evaluate(models(i).transform(test, params(i))))
+          metric2 match {
+            case Success(r) => log.info(s"Got auroc $r for model $name trained with ${params(i)}.")
+          }
           metrics(i) = metric
         }
         val (bestMetric, bestIndex) =
