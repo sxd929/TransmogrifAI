@@ -279,6 +279,7 @@ private[op] trait OpValidator[M <: Model[_], E <: Estimator[_]] extends Serializ
   )(implicit ec: ExecutionContext): Array[ValidatedModel[E]] = {
     train.persist()
     test.persist()
+    val evaluator2 = Evaluators.BinaryClassification.auROC()
     val summaryFuts = modelInfo.map { case (estimator, params) =>
       val name = estimator.getClass.getSimpleName
       estimator match {
@@ -294,7 +295,6 @@ private[op] trait OpValidator[M <: Model[_], E <: Estimator[_]] extends Serializ
           estimator.set(pi1, label).set(pi2, features)
       }
       Future {
-        val evaluator2 = Evaluators.BinaryClassification.auROC()
         val numModels = params.length
         val metrics = new Array[Double](params.length)
         log.info(s"Train split with multiple sets of parameters.")
@@ -305,6 +305,7 @@ private[op] trait OpValidator[M <: Model[_], E <: Estimator[_]] extends Serializ
           val metric2 = Try(evaluator2.evaluate(models(i).transform(test, params(i))))
           metric2 match {
             case Success(r) => log.info(s"Got auroc $r for model $name trained with ${params(i)}.")
+            case _ =>
           }
           metrics(i) = metric
         }
