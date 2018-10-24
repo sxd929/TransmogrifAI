@@ -279,7 +279,7 @@ private[op] trait OpValidator[M <: Model[_], E <: Estimator[_]] extends Serializ
   )(implicit ec: ExecutionContext): Array[ValidatedModel[E]] = {
     train.persist()
     test.persist()
-    val evaluator2 = Evaluators.BinaryClassification.auPR()
+    val evaluator2 = Evaluators.BinaryClassification.auROC()
     val summaryFuts = modelInfo.map { case (estimator, params) =>
       val name = estimator.getClass.getSimpleName
       estimator match {
