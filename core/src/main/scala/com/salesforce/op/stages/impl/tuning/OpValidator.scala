@@ -306,7 +306,10 @@ private[op] trait OpValidator[M <: Model[_], E <: Estimator[_]] extends Serializ
           val metric2 = Try(evaluator2.evaluate(models(i).transform(test, params(i))))
           metric2 match {
             case Success(r) => log.info(s"Got auroc $r for model $name trained with ${params(i)}.")
-            case Failure(e) => log.info(e.getStackTrace.mkString("\n"))
+            case Failure(e) => {
+              log.info(e.getMessage)
+              log.info(e.getStackTrace.mkString("\n"))
+            }
           }
           metrics(i) = metric
         }
