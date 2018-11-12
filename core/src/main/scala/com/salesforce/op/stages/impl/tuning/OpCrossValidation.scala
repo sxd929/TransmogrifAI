@@ -66,8 +66,8 @@ private[op] class OpCrossValidation[M <: Model[_], E <: Estimator[_]]
     log.info(s"Best set of parameters:\n${grid(bestIndex)}")
     log.info(s"Best cross-validation metric: $bestMetric.")
     println("print out the cross validation info instead")
-    folds.map(_.metrics).foreach(println)
-    folds.map(_.grids).foreach(println)
+    folds.map(_.metrics).foreach(a => a.foreach(println))
+    folds.map(_.grids).foreach(a => a.foreach(println))
     ValidatedModel(est, bestIndex, metrics, grid)
   }
 
