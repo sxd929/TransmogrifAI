@@ -65,6 +65,9 @@ private[op] class OpCrossValidation[M <: Model[_], E <: Estimator[_]]
       else metrics.zipWithIndex.minBy(_._1)
     log.info(s"Best set of parameters:\n${grid(bestIndex)}")
     log.info(s"Best cross-validation metric: $bestMetric.")
+    println("print out the cross validation info instead")
+    folds.map(_.metrics).foreach(println)
+    folds.map(_.grids).foreach(println)
     ValidatedModel(est, bestIndex, metrics, grid)
   }
 
