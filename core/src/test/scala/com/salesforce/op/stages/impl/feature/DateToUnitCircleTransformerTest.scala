@@ -28,7 +28,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.salesforce.op.stages.impl.feature
+/* package com.salesforce.op.stages.impl.feature
 
 import com.salesforce.op._
 import com.salesforce.op.features.types._
@@ -211,4 +211,4 @@ class DateToUnitCircleTransformerTest extends OpTransformerSpec[OPVector, DateTo
     val expected = indexSeqToUnitCircle(Seq(0, 1, 2, 3, 4), 6)
     all(actual.zip(expected).map(g => Vectors.sqdist(g._1.value, g._2.value))) should be < eps
   }
-}
+} */
