@@ -104,7 +104,10 @@ private[op] class OpCrossValidation[M <: Model[_], E <: Estimator[_]]
       log.info(s"Cross Validation $splitIndex with multiple sets of parameters.")
       Future {
         suppressLoggingForFun() {
-          val training = spark.createDataFrame(trainingRDD, schema)
+          val trainp = trainingRDD.filter(r => r(0).asInstanceOf[Double] == 1.0).sample(true, 3)
+          val trainn = trainingRDD.filter(r => r(0).asInstanceOf[Double] == 0.0).sample(true, 0.9071146245059288)
+          val newTrainRDD = trainp.union(trainn)
+          val training = spark.createDataFrame(newTrainRDD, schema)
           val validation = spark.createDataFrame(validationRDD, schema)
           val (newTrain, newTest) = theDAG.map((d: StagesDAG) =>
             // If there is a CV DAG, then run it

@@ -52,6 +52,7 @@ import org.scalatest.junit.JUnitRunner
 
 import scala.util.{Failure, Success}
 
+/*
 @RunWith(classOf[JUnitRunner])
 class ModelInsightsTest extends FlatSpec with PassengerSparkFixtureTest {
 
@@ -120,6 +121,7 @@ class ModelInsightsTest extends FlatSpec with PassengerSparkFixtureTest {
     .train()
 
   val rawNames = Set(age.name, weight.name, height.name, genderPL.name, description.name)
+  workflow.train()
 
   Spec[ModelInsights] should "throw an error when you try to get insights on a raw feature" in {
     val ex = the[IllegalArgumentException] thrownBy {
@@ -520,3 +522,4 @@ class ModelInsightsTest extends FlatSpec with PassengerSparkFixtureTest {
   }
 
 }
+*/

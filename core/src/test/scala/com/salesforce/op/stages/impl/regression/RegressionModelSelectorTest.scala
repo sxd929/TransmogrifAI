@@ -50,7 +50,7 @@ import org.junit.runner.RunWith
 import org.scalatest.FlatSpec
 import org.scalatest.junit.JUnitRunner
 
-
+/*
 @RunWith(classOf[JUnitRunner])
 class RegressionModelSelectorTest extends FlatSpec with TestSparkContext with CompareParamGrid {
   val seed = 1234L
@@ -327,3 +327,4 @@ class RegressionModelSelectorTest extends FlatSpec with TestSparkContext with Co
     assert(res <= scores.length, "prediction failed")
   }
 }
+*/
