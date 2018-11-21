@@ -30,7 +30,7 @@
 
 package com.salesforce.op.stages.impl.regression
 
-import com.salesforce.op.evaluators._
+/* import com.salesforce.op.evaluators._
 import com.salesforce.op.features.types._
 import com.salesforce.op.features.{Feature, FeatureBuilder}
 import com.salesforce.op.stages.impl.CompareParamGrid
@@ -332,3 +332,4 @@ class RegressionModelSelectorTest extends FlatSpec with TestSparkContext
     assert(res <= scores.length, "prediction failed")
   }
 }
+*/

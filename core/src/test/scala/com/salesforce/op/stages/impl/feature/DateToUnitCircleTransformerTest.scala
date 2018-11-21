@@ -30,7 +30,7 @@
 
 package com.salesforce.op.stages.impl.feature
 
-import com.salesforce.op._
+/* import com.salesforce.op._
 import com.salesforce.op.features.types._
 import com.salesforce.op.stages.impl.feature.TimePeriod._
 import com.salesforce.op.test.{OpTransformerSpec, TestFeatureBuilder}
@@ -215,3 +215,4 @@ class DateToUnitCircleTransformerTest extends OpTransformerSpec[OPVector, DateTo
     all(actual.zip(expected).map(g => Vectors.sqdist(g._1.value, g._2.value))) should be < eps
   }
 }
+*/

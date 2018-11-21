@@ -30,7 +30,7 @@
 
 package com.salesforce.op
 
-import com.salesforce.op.features.types._
+/* import com.salesforce.op.features.types._
 import com.salesforce.op.features.{Feature, FeatureDistributionType}
 import com.salesforce.op.filters.FeatureDistribution
 import com.salesforce.op.stages.impl.classification._
@@ -596,3 +596,4 @@ class ModelInsightsTest extends FlatSpec with PassengerSparkFixtureTest {
     }
   }
 }
+*/
