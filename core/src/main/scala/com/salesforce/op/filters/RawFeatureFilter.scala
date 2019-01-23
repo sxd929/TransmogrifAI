@@ -138,12 +138,14 @@ class RawFeatureFilter[T]
       val respOut = allResponses.map(TransientFeature(_)).flatMap {
         case f if f.getFeature().isSubtypeOf[OPNumeric[_]] =>
           log.info("Using numeric response: {}", f.name)
+          log.info(f.typeName)
           Option(f)
         case f =>
           log.info("Not using non-numeric response in raw feature filter: {}", f.name)
           None
       }
       val predOut = allPredictors.map(TransientFeature(_))
+      predOut.foreach(x => println(x.name + ": " + x.typeName))
       (respOut, predOut)
     }
     val preparedFeatures: RDD[PreparedFeatures] = data.rdd.map(PreparedFeatures(_, responses, predictors, timePeriod))
